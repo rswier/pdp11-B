@@ -24,7 +24,7 @@
 /* #define EMU211			add 2.11BSD emulation */
 /* #define EMUV1			add 1st Edition emulation */
 /* #define INLINE inline		inlines some functions (needs gcc) */
-					
+
 
 /* Optimisation defines */
 #ifndef INLINE
@@ -113,10 +113,10 @@ typedef unsigned long u_int32_t;
 #define NFILE   40		/* Number of file pointers we can buffer */
 #define ValidFD(x) ((x>=0) && (x<NFILE))
 				/* Used for opening on directories */
-#define TMP_PLATE       "/usr/tmp/apout_dir.XXXXXX"
+#define TMP_PLATE       "/tmp/apout_dir.XXXXXX"
 
 
-/* Set up prototype macro for 
+/* Set up prototype macro for
  * both K&R and ANSI C platforms
  */
 #ifdef __STDC__
@@ -442,7 +442,7 @@ extern u_int16_t *adptr;
 	}
 #endif
 #endif
-				
+
 
 
 
