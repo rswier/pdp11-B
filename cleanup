@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cd tools/apout
+make clean
+cd ../..
+
+rm -rf libb
+rm -rf bilib
+rm source/a.out

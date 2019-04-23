@@ -1,0 +1,64 @@
+#!/bin/sh
+
+# build apout
+cd tools/apout
+make
+cd ../..
+export APOUT_ROOT=$PWD/fs/root
+
+# extract /usr/lib/libb.a
+rm -rf libb
+mkdir libb
+cd libb
+../tools/apout/apout ../fs/root/bin/ar x ../fs/usr/lib/libb.a
+cd ..
+
+# build and compare source/libb
+cd source
+echo char.s;   ../tools/apout/apout ../fs/root/bin/as libb/char.s;   diff a.out ../libb/char.o
+echo chdir.s;  ../tools/apout/apout ../fs/root/bin/as libb/chdir.s;  diff a.out ../libb/chdir.o
+echo chmod.s;  ../tools/apout/apout ../fs/root/bin/as libb/chmod.s;  diff a.out ../libb/chmod.o
+echo chown.s;  ../tools/apout/apout ../fs/root/bin/as libb/chown.s;  diff a.out ../libb/chown.o
+echo close.s;  ../tools/apout/apout ../fs/root/bin/as libb/close.s;  diff a.out ../libb/close.o
+echo creat.s;  ../tools/apout/apout ../fs/root/bin/as libb/creat.s;  diff a.out ../libb/creat.o
+echo ctime.s;  ../tools/apout/apout ../fs/root/bin/as libb/ctime.s;  diff a.out ../libb/ctime.o
+echo execl.s;  ../tools/apout/apout ../fs/root/bin/as libb/execl.s;  diff a.out ../libb/execl.o
+echo execv.s;  ../tools/apout/apout ../fs/root/bin/as libb/execv.s;  diff a.out ../libb/execv.o
+echo exit.s;   ../tools/apout/apout ../fs/root/bin/as libb/exit.s;   diff a.out ../libb/exit.o
+echo fork.s;   ../tools/apout/apout ../fs/root/bin/as libb/fork.s;   diff a.out ../libb/fork.o
+echo fstat.s;  ../tools/apout/apout ../fs/root/bin/as libb/fstat.s;  diff a.out ../libb/fstat.o
+echo getchr.s; ../tools/apout/apout ../fs/root/bin/as libb/getchr.s; diff a.out ../libb/getchr.o
+echo getuid.s; ../tools/apout/apout ../fs/root/bin/as libb/getuid.s; diff a.out ../libb/getuid.o
+echo gtty.s;   ../tools/apout/apout ../fs/root/bin/as libb/gtty.s;   diff a.out ../libb/gtty.o
+echo hog.s;    ../tools/apout/apout ../fs/root/bin/as libb/hog.s;    diff a.out ../libb/hog.o
+echo intr.s;   ../tools/apout/apout ../fs/root/bin/as libb/intr.s;   diff a.out ../libb/intr.o
+echo lchar.s;  ../tools/apout/apout ../fs/root/bin/as libb/lchar.s;  diff a.out ../libb/lchar.o
+echo link.s;   ../tools/apout/apout ../fs/root/bin/as libb/link.s;   diff a.out ../libb/link.o
+echo makdir.s; ../tools/apout/apout ../fs/root/bin/as libb/makdir.s; diff a.out ../libb/makdir.o
+echo open.s;   ../tools/apout/apout ../fs/root/bin/as libb/open.s;   diff a.out ../libb/open.o
+echo printf.s; ../tools/apout/apout ../fs/root/bin/as libb/printf.s; diff a.out ../libb/printf.o
+echo printn.s; ../tools/apout/apout ../fs/root/bin/as libb/printn.s; diff a.out ../libb/printn.o
+echo putchr.s; ../tools/apout/apout ../fs/root/bin/as libb/putchr.s; diff a.out ../libb/putchr.o
+echo quit.s;   ../tools/apout/apout ../fs/root/bin/as libb/quit.s;   diff a.out ../libb/quit.o
+echo read.s;   ../tools/apout/apout ../fs/root/bin/as libb/read.s;   diff a.out ../libb/read.o
+echo seek.s;   ../tools/apout/apout ../fs/root/bin/as libb/seek.s;   diff a.out ../libb/seek.o
+echo setuid.s; ../tools/apout/apout ../fs/root/bin/as libb/setuid.s; diff a.out ../libb/setuid.o
+echo sleep.s;  ../tools/apout/apout ../fs/root/bin/as libb/sleep.s;  diff a.out ../libb/sleep.o
+echo stat.s;   ../tools/apout/apout ../fs/root/bin/as libb/stat.s;   diff a.out ../libb/stat.o
+echo stty.s;   ../tools/apout/apout ../fs/root/bin/as libb/stty.s;   diff a.out ../libb/stty.o
+echo time.s;   ../tools/apout/apout ../fs/root/bin/as libb/time.s;   diff a.out ../libb/time.o
+echo unlink.s; ../tools/apout/apout ../fs/root/bin/as libb/unlink.s; diff a.out ../libb/unlink.o
+echo wait.s;   ../tools/apout/apout ../fs/root/bin/as libb/wait.s;   diff a.out ../libb/wait.o
+echo write.s;  ../tools/apout/apout ../fs/root/bin/as libb/write.s;  diff a.out ../libb/write.o
+cd ..
+
+# extract /usr/lib/bilib.a
+rm -rf bilib
+mkdir bilib
+cd bilib
+../tools/apout/apout ../fs/root/bin/ar x ../fs/usr/lib/bilib.a
+cd ..
+
+# build and compare source/bilib
+cd source
+cd ..
