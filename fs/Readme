@@ -1,0 +1,9 @@
+The directories root/ and usr/ contain files from the "s2-bits tape",
+which Dennis Ritchie extracted from an old DECtape at Bell Labs, which is
+available here:
+
+    https://www.tuhs.org/Archive/Distributions/Research/1972_stuff/
+
+The files were sourced from the unix-jun72 project:
+
+    https://github.com/DoctorWkt/unix-jun72

@@ -1,0 +1,7 @@
+The apout/ directory contains the Apout simulator for PDP-11 Unix a.out binaries.
+
+The disaout/ directoy contains a disassembler for a.out binraries.
+
+These were sourced from the unix-jun72 project:
+
+    https://github.com/DoctorWkt/unix-jun72
